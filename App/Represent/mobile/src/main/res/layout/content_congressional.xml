@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:background="@color/lightGray"
+    android:gravity="left"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.currey_wilson.cs160.represent.CongressionalActivity"
+    tools:showIn="@layout/activity_congressional">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Represenatatives near [zipcode]"
+            android:gravity="center"
+            android:id="@+id/location"
+            android:padding="20px"/>
+
+        <LinearLayout
+            android:padding="20px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/democratBlue"
+            android:layout_gravity="left">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/person_outline"
+                android:id="@+id/imageView1"
+                android:layout_weight="0"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingLeft="30px"
+                android:paddingRight="30px"
+                android:paddingTop="0px"
+                android:paddingBottom="0px"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="HILLARY CLINTON"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/white"
+                    android:id="@+id/candidateName1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DEMOCRATIC PARTY"
+                    android:textColor="@color/white"
+                    android:id="@+id/party1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="hillaryclinton@gmail.com"
+                    android:textColor="@color/white"
+                    android:id="@+id/email1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="hillaryclinton.com"
+                    android:textColor="@color/white"
+                    android:id="@+id/website1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tweet1"
+                    android:textColor="@color/white"
+                    android:id="@+id/tweet1"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="20px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/republicanRed"
+            android:layout_gravity="left">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/person_outline"
+                android:id="@+id/imageView2"
+                android:layout_weight="0"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingLeft="30px"
+                android:paddingRight="30px"
+                android:paddingTop="0px"
+                android:paddingBottom="0px"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MARCO RUBIO"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/white"
+                    android:id="@+id/candidateName2"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="REPUBLICAN PARTY"
+                    android:textColor="@color/white"
+                    android:id="@+id/party2"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="marcorubio@gmail.com"
+                    android:textColor="@color/white"
+                    android:id="@+id/email2"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="marcorubio.com"
+                    android:textColor="@color/white"
+                    android:id="@+id/website2"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tweet2"
+                    android:textColor="@color/white"
+                    android:id="@+id/tweet2"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="20px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/independentYellow"
+            android:layout_gravity="left">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/person_outline"
+                android:id="@+id/imageView3"
+                android:layout_weight="0"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingLeft="30px"
+                android:paddingRight="30px"
+                android:paddingTop="0px"
+                android:paddingBottom="0px"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BERNIE SANDERS"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/white"
+                    android:id="@+id/candidateName3"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="INDEPENDENT PARTY"
+                    android:textColor="@color/white"
+                    android:id="@+id/party3"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="berniesanders@gmail.com"
+                    android:textColor="@color/white"
+                    android:id="@+id/email3"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="berniesanders.com"
+                    android:textColor="@color/white"
+                    android:id="@+id/website3"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tweet3"
+                    android:textColor="@color/white"
+                    android:id="@+id/tweet3"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:id="@+id/congressional_back"/>
+
+    </LinearLayout>
+</RelativeLayout>

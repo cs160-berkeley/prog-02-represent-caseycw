@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/republicanRed"
+    android:gravity="center"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.currey_wilson.cs160.represent.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ZIP CODE:"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView1" />
+
+    <FrameLayout
+        android:layout_below="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/zipFrame">
+
+        <EditText
+            android:layout_below="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:inputType="number"
+            android:ems="5"
+            android:id="@+id/zipCode" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_below="@+id/zipFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchFrame">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/fab_margin"
+            android:text="SEARCH"
+            android:id="@+id/search"
+            android:background="@color/searchGreen"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"
+            android:padding="@dimen/abc_edit_text_inset_top_material" />
+    </FrameLayout>
+
+    <Space
+        android:layout_width="1dp"
+        android:id="@+id/space2"
+        android:layout_below="@+id/searchFrame"
+        android:layout_height="15dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/space2"
+        android:text="OR"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView2" />
+
+    <FrameLayout
+        android:layout_below="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentLocationFrame">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/fab_margin"
+            android:text="USE CURRENT LOCATION"
+            android:id="@+id/currentLocation"
+            android:background="@color/democratBlue"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"
+            android:padding="@dimen/abc_edit_text_inset_top_material" />
+    </FrameLayout>
+
+    <Space
+        android:layout_width="1dp"
+        android:id="@+id/space3"
+        android:layout_below="@+id/currentLocationFrame"
+        android:layout_height="40dp"/>
+
+</RelativeLayout>

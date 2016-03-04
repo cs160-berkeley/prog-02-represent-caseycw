@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Represent</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_congressional">CongressionalActivity</string>
+    <string name="tweet1">\"Why am I not the nominee yet?\"</string>
+    <string name="tweet2">\"I can\'t believe I still have to deal with Donald Trump.\"</string>
+    <string name="tweet3">\"Viva la revolución.\"</string>
+    <string name="title_activity_detailed">DetailedActivity</string>
+</resources>

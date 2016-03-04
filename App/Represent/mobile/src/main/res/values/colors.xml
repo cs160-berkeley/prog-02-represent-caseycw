@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="republicanRed">#EB5757</color>
+    <color name="democratBlue">#2F80ED</color>
+    <color name="searchGreen">#27AE60</color>
+    <color name="independentYellow">#F2C94C</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="lightGray">#E0E0E0</color>
+    <color name="darkRed">#BD5656</color>
+    <color name="darkBlue">#276CC8</color>
+    <color name="darkYellow">#CFAB36</color>
+</resources>
