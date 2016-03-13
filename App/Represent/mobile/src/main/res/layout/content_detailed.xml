@@ -18,6 +18,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BACK"
+            android:layout_weight="0"
+            android:id="@+id/detailed_back"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +47,7 @@
                 android:padding="10dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/person_outline"
-                android:id="@+id/imageView1"
+                android:id="@+id/picture"
                 android:layout_weight="0"/>
         </FrameLayout>
 
@@ -94,19 +101,18 @@
                     android:layout_width="1dp"
                     android:layout_height="10dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Committee 1"
-                    android:id="@+id/committee1"
-                    android:textColor="@color/white"/>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Committee 2"
-                    android:id="@+id/committee2"
+                    android:text="Committee 1\nCommittee 2"
+                    android:id="@+id/committees"
                     android:textColor="@color/white"/>
+
+                </ScrollView>
 
             </LinearLayout>
 
@@ -128,19 +134,18 @@
                     android:layout_width="1dp"
                     android:layout_height="10dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bill 1"
-                    android:id="@+id/bill1"
-                    android:textColor="@color/white"/>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bill 2"
-                    android:id="@+id/bill2"
+                    android:text="Bill 1\nBill 2"
+                    android:id="@+id/bills"
                     android:textColor="@color/white"/>
+
+                </ScrollView>
 
             </LinearLayout>
 

@@ -46,25 +46,24 @@ public class PhoneToWatchService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        // Which cat do we want to feed? Grab this info from INTENT
-        // which was passed over when we called startService
         Bundle bundle = intent.getExtras();
         ArrayList<String> repsData = bundle.getStringArrayList("REPS_DATA");
         int currentRep = bundle.getInt("CURRENT_REP");
-        String theMessage = String.valueOf(currentRep) + "~";
+        String state = bundle.getString("STATE");
+        String county = bundle.getString("COUNTY");
+        String using_zipcode = bundle.getBoolean("USE_ZIPCODE") ? "USE_ZIPCODE_TRUE" : "USE_ZIPCODE_FALSE";
+        String location = bundle.getString("LOCATION");
+        String theMessage = String.valueOf(currentRep) + "#" + state + "#" + county + "#" + using_zipcode + "#" + location + "~";
         for (String s : repsData) {
             theMessage += s + "!";
         }
         final String message = theMessage;
-        //final String catName = extras.getString("CAT_NAME");
 
-        // Send the message with the cat name
         new Thread(new Runnable() {
             @Override
             public void run() {
                 //first, connect to the apiclient
                 mApiClient.connect();
-                //now that you're connected, send a massage with the cat name
                 sendMessage("/reps", message);
             }
         }).start();

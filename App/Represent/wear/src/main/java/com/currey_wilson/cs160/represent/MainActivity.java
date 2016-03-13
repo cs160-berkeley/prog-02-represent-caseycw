@@ -20,10 +20,17 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.Toast;
 
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends Activity implements SensorEventListener {
+
+    private static final String TWITTER_KEY = "MCly8WvkJSefGI5O8aTD18uuh";
+    private static final String TWITTER_SECRET = "r1eJKGLpaf9fQADILIT7T5iVD64Wnj11gn7YeTDJCfJuvAGXtU";
+
 
     private TextView mTextView;
     TextView nameText;
@@ -33,6 +40,10 @@ public class MainActivity extends Activity implements SensorEventListener {
     Random r;
     ArrayList<String> repsData;
     int currentRep;
+    String state;
+    String county;
+    boolean use_zipcode;
+    String location;
 
     private SensorManager sensorManager;
     private Sensor accelerometer;
@@ -53,6 +64,8 @@ public class MainActivity extends Activity implements SensorEventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
         setContentView(R.layout.activity_main);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
@@ -69,6 +82,10 @@ public class MainActivity extends Activity implements SensorEventListener {
                 if (bundle != null) {
                     repsData = bundle.getStringArrayList("REPS_DATA");
                     currentRep = bundle.getInt("CURRENT_REP");
+                    state = bundle.getString("STATE");
+                    county = bundle.getString("COUNTY");
+                    use_zipcode = bundle.getBoolean("USE_ZIPCODE");
+                    location = bundle.getString("LOCATION");
                     makeView();
                 } else {
                     nameText.setText("REPRESENT!");
@@ -82,6 +99,10 @@ public class MainActivity extends Activity implements SensorEventListener {
                         Intent voteIntent = new Intent(MainActivity.this, VoteActivity.class);
                         voteIntent.putStringArrayListExtra("REPS_DATA", repsData);
                         voteIntent.putExtra("CURRENT_REP", currentRep);
+                        voteIntent.putExtra("STATE", state);
+                        voteIntent.putExtra("COUNTY", county);
+                        voteIntent.putExtra("USE_ZIPCODE", use_zipcode);
+                        voteIntent.putExtra("LOCATION", location);
                         startActivity(voteIntent);
                     }
                 });
@@ -141,6 +162,8 @@ public class MainActivity extends Activity implements SensorEventListener {
             Intent sendIntent = new Intent(getBaseContext(), WatchToPhoneService.class);
             sendIntent.putStringArrayListExtra("REPS_DATA", repsData);
             sendIntent.putExtra("CURRENT_REP", currentRep);
+            sendIntent.putExtra("USE_ZIPCODE", use_zipcode);
+            sendIntent.putExtra("LOCATION", location);
             startService(sendIntent);
 
             makeView();
@@ -150,12 +173,12 @@ public class MainActivity extends Activity implements SensorEventListener {
 
     private void updateLocation() {
         r = new Random();
-        String random_zip = String.valueOf(r.nextInt((99999-10000) + 1) + 10000);
-
-        // Update other lines based on API
+        // generate latitudes within range of 33.98 -> 45.77, longitudes within range of -118.076 -> -89.07
+        double random_lat = (r.nextDouble() * (45.77 - 33.98)) + 33.98;
+        double random_long = (r.nextDouble() * (-89.07 - (-118.076))) - 118.076;
 
         Intent sendIntent = new Intent(getBaseContext(), WatchToPhoneService.class);
-        sendIntent.putExtra("ZIPCODE", random_zip);
+        sendIntent.putExtra("R_LOCATION", String.valueOf(random_lat) + "," + String.valueOf(random_long));
         startService(sendIntent);
     }
 
@@ -166,13 +189,13 @@ public class MainActivity extends Activity implements SensorEventListener {
         partyText.setText(result[1]);
         voteButton.setEnabled(true);
 
-        if (result[1].equals("DEMOCRATIC PARTY")) {
+        if (result[1].equals("Democratic Party")) {
             //watchBackground.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.democratBlue));
             watchBackground.setBackgroundColor(getResources().getColor(R.color.democratBlue));
-        } else if (result[1].equals("REPUBLICAN PARTY")) {
+        } else if (result[1].equals("Republican Party")) {
             //watchBackground.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.republicanRed));
             watchBackground.setBackgroundColor(getResources().getColor(R.color.republicanRed));
-        } else if (result[1].equals("INDEPENDENT PARTY")) {
+        } else if (result[1].equals("Independent Party")) {
             //watchBackground.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.independentYellow));
             watchBackground.setBackgroundColor(getResources().getColor(R.color.independentYellow));
         }

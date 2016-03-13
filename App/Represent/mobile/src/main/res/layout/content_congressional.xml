@@ -15,19 +15,29 @@
     tools:showIn="@layout/activity_congressional">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Represenatatives near [zipcode]"
+        android:gravity="center"
+        android:id="@+id/location"
+        android:padding="20px"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+    <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/list"
         android:layout_alignParentTop="true">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Represenatatives near [zipcode]"
-            android:gravity="center"
-            android:id="@+id/location"
-            android:padding="20px"/>
 
         <LinearLayout
             android:padding="20px"
@@ -41,8 +51,11 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:src="@drawable/person_outline"
-                android:id="@+id/imageView1"
                 android:layout_weight="0"/>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -60,39 +73,34 @@
                     android:layout_height="wrap_content"
                     android:text="HILLARY CLINTON"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/white"
-                    android:id="@+id/candidateName1"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="DEMOCRATIC PARTY"
-                    android:textColor="@color/white"
-                    android:id="@+id/party1"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="hillaryclinton@gmail.com"
-                    android:textColor="@color/white"
-                    android:id="@+id/email1"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="hillaryclinton.com"
-                    android:textColor="@color/white"
-                    android:id="@+id/website1"/>
+                    android:textColor="@color/white" />
 
-                <TextView
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tweet1"
-                    android:textColor="@color/white"
-                    android:id="@+id/tweet1"/>
+                    android:textColor="@color/white" />-->
 
             </LinearLayout>
-
+            </ScrollView>
 
         </LinearLayout>
 
@@ -102,14 +110,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@color/republicanRed"
+            android:id="@+id/rep_base_layout"
             android:layout_gravity="left">
 
             <ImageView
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:src="@drawable/person_outline"
-                android:id="@+id/imageView2"
                 android:layout_weight="0"/>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -127,38 +139,34 @@
                     android:layout_height="wrap_content"
                     android:text="MARCO RUBIO"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/white"
-                    android:id="@+id/candidateName2"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="REPUBLICAN PARTY"
-                    android:textColor="@color/white"
-                    android:id="@+id/party2"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="marcorubio@gmail.com"
-                    android:textColor="@color/white"
-                    android:id="@+id/email2"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="marcorubio.com"
-                    android:textColor="@color/white"
-                    android:id="@+id/website2"/>
+                    android:textColor="@color/white" />
 
-                <TextView
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tweet2"
-                    android:textColor="@color/white"
-                    android:id="@+id/tweet2"/>
+                    android:textColor="@color/white" />-->
 
             </LinearLayout>
+            </ScrollView>
 
 
         </LinearLayout>
@@ -175,8 +183,11 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:src="@drawable/person_outline"
-                android:id="@+id/imageView3"
                 android:layout_weight="0"/>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -194,47 +205,44 @@
                     android:layout_height="wrap_content"
                     android:text="BERNIE SANDERS"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/white"
-                    android:id="@+id/candidateName3"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="INDEPENDENT PARTY"
-                    android:textColor="@color/white"
-                    android:id="@+id/party3"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="berniesanders@gmail.com"
-                    android:textColor="@color/white"
-                    android:id="@+id/email3"/>
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="berniesanders.com"
-                    android:textColor="@color/white"
-                    android:id="@+id/website3"/>
+                    android:textColor="@color/white" />
 
-                <TextView
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tweet3"
-                    android:textColor="@color/white"
-                    android:id="@+id/tweet3"/>
+                    android:textColor="@color/white" />-->
 
             </LinearLayout>
-
+            </ScrollView>
 
         </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BACK"
-            android:id="@+id/congressional_back"/>
-
+    </LinearLayout>
+    </ScrollView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:layout_weight="0"
+        android:id="@+id/congressional_back"/>
     </LinearLayout>
 </RelativeLayout>
